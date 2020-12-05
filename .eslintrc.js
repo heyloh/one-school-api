@@ -12,7 +12,8 @@ module.exports = {
     },
     "rules": {
       "no-console": "off",
-      "import/first": "off"
+      "import/first": "off",
+      "no-param-reassign": "off",
     },
     "parser": "babel-eslint"
 };
