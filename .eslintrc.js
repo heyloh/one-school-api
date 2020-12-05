@@ -11,7 +11,8 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-      "no-console": "off"
+      "no-console": "off",
+      "import/first": "off"
     },
     "parser": "babel-eslint"
 };
