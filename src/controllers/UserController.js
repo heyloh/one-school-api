@@ -11,7 +11,9 @@ export default {
       });
       return response.status(201).json(newUser);
     } catch (err) {
-      return response.status(500).json(err);
+      return response.status(400).json({
+        errors: err.errors.map((e) => e.message),
+      });
     }
   },
 };
