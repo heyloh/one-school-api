@@ -19,7 +19,14 @@ export default {
         email,
         password,
       });
-      return response.status(201).json(newUser);
+
+      const { id } = newUser;
+
+      return response.status(201).json({
+        id,
+        name,
+        email,
+      });
     } catch (err) {
       return response.status(400).json({
         errors: err.errors.map((e) => e.message),
@@ -67,13 +74,17 @@ export default {
         });
       }
 
-      const updatedUser = await user.update({
+      await user.update({
         name: name || user.name,
         email: email || user.email,
         password: password || user.password,
       });
 
-      return response.status(200).json(updatedUser);
+      return response.status(200).json({
+        id,
+        name,
+        email,
+      });
     } catch (err) {
       return response.status(400).json({
         errors: err.errors.map((e) => e.message),
@@ -83,13 +94,7 @@ export default {
 
   async delete(request, response) {
     try {
-      const { id } = request.params;
-
-      if (!id) {
-        return response.status(400).json({
-          errors: ['Id is missing.'],
-        });
-      }
+      const id = request.user_id;
 
       const user = await User.findByPk(id);
 
