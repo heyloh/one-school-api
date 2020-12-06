@@ -1,13 +1,13 @@
 import express from 'express';
 
 /* Controllers */
-import HomeController from './controllers/HomeController';
+import TokenController from './controllers/TokenController';
 import UserController from './controllers/UserController';
 
 const routes = express.Router();
 
-/* Home */
-routes.get('/', HomeController.index);
+/* Token */
+routes.post('/tokens', TokenController.store);
 
 /* User */
 routes.post('/users', UserController.store);
