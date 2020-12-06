@@ -3,7 +3,7 @@ import User from '../models/User';
 export default {
   async index(request, response) {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({ attributes: ['id', 'name', 'email'] });
       return response.status(200).json(users);
     } catch (err) {
       return response.status(400).json({ message: 'Something went wrong.' });
@@ -29,8 +29,7 @@ export default {
 
   async show(request, response) {
     try {
-      const { id } = request.params;
-      const user = await User.findByPk(id);
+      const user = await User.findByPk(request.params.id);
 
       if (!user) {
         return response.status(404).json({
@@ -38,7 +37,9 @@ export default {
         });
       }
 
-      return response.status(200).json(user);
+      const { id, name, email } = user;
+
+      return response.status(200).json({ id, name, email });
     } catch (err) {
       return response.status(400).json({
         errors: err.errors.map((e) => e.message),
@@ -48,15 +49,9 @@ export default {
 
   async update(request, response) {
     try {
-      const { id } = request.params;
+      const id = request.user_id;
 
       const { name, email, password } = request.body;
-
-      if (!id) {
-        return response.status(400).json({
-          errors: ['Id is missing.'],
-        });
-      }
 
       if (!name && !email && !password) {
         return response.status(400).json({
