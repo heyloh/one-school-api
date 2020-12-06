@@ -14,9 +14,10 @@ routes.post('/tokens', TokenController.store);
 
 /* User */
 routes.post('/users', UserController.store);
-routes.get('/users', LoginRequired, UserController.index);
+routes.put('/users', LoginRequired, UserController.update);
+routes.delete('/users', LoginRequired, UserController.delete);
+/* Should not exist on a real system */
+routes.get('/users', UserController.index);
 routes.get('/users/:id', UserController.show);
-routes.put('/users/:id?', UserController.update);
-routes.delete('/users/:id?', UserController.delete);
 
 export default routes;
