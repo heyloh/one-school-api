@@ -12,6 +12,7 @@ The following tools are being used on the development of this API:
 - Docker
 - bcryptjs
 - JWT (jsonwebtoken)
+- Multer
 - Eslint
 > See package.json for more details
 
@@ -19,7 +20,7 @@ The following tools are being used on the development of this API:
 - [x] User CRUD
 - [x] User Authentication
 - [x] Students CRUD
-- [ ] File uploads
+- [x] File uploads
 - [ ] Profile picture Storage
 - [ ] Students List
 
