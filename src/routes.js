@@ -15,7 +15,7 @@ const routes = express.Router();
 routes.post('/tokens', TokenController.store);
 
 /* Picture */
-routes.post('/pictures', PictureController.store);
+routes.post('/pictures', LoginRequired, PictureController.store);
 
 /* Student */
 routes.get('/students', StudentController.index);
