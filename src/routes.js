@@ -1,17 +1,25 @@
 import express from 'express';
+import multer from 'multer';
+import multerConfig from './config/multer';
 
 /* Controllers */
 import TokenController from './controllers/TokenController';
+import PictureController from './controllers/PictureController';
 import StudentController from './controllers/StudentController';
 import UserController from './controllers/UserController';
 
 /* Middlewares */
 import LoginRequired from './middlewares/LoginRequired';
 
+const upload = multer(multerConfig);
+
 const routes = express.Router();
 
 /* Token */
 routes.post('/tokens', TokenController.store);
+
+/* Picture */
+routes.post('/pictures', upload.single('picture'), PictureController.store);
 
 /* Student */
 routes.get('/students', StudentController.index);
