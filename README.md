@@ -15,6 +15,14 @@ The following tools are being used on the development of this API:
 - Eslint
 > See package.json for more details
 
+## Features
+- [x] User CRUD
+- [x] User Authentication
+- [x] Students CRUD
+- [ ] File uploads
+- [ ] Profile picture Storage
+- [ ] Students List
+
 ## 🚀 How can I run it?
 
 You need to have NodeJS and GIT installed on your device for running this project.
