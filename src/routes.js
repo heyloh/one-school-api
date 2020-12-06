@@ -16,9 +16,9 @@ routes.post('/tokens', TokenController.store);
 /* Student */
 routes.get('/students', StudentController.index);
 routes.get('/students/:id', StudentController.show);
-routes.post('/students', StudentController.store);
-routes.put('/students/:id', StudentController.update);
-routes.delete('/students/:id', StudentController.delete);
+routes.post('/students', LoginRequired, StudentController.store);
+routes.put('/students/:id', LoginRequired, StudentController.update);
+routes.delete('/students/:id', LoginRequired, StudentController.delete);
 
 /* User */
 routes.post('/users', UserController.store);
