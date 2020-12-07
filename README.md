@@ -21,8 +21,8 @@ The following tools are being used on the development of this API:
 - [x] User Authentication
 - [x] Students CRUD
 - [x] File uploads
-- [ ] Profile picture Storage
-- [ ] Students List
+- [x] Profile picture Storage
+- [x] Students List
 
 ## 🚀 How can I run it?
 
