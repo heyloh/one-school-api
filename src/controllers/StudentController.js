@@ -16,7 +16,7 @@ export default {
       order: [['id', 'DESC'], [Picture, 'id', 'DESC']],
       include: {
         model: Picture,
-        attributes: ['id', 'filename'],
+        attributes: ['id', 'url', 'filename'],
       },
     });
 
@@ -45,7 +45,7 @@ export default {
         order: [['id', 'DESC'], [Picture, 'id', 'DESC']],
         include: {
           model: Picture,
-          attributes: ['id', 'filename'],
+          attributes: ['id', 'url', 'filename'],
         },
       });
 
