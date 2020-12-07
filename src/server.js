@@ -5,6 +5,6 @@ dotenv.config();
 
 const port = 3333;
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
   console.log(`🚀 Server listening on port: ${port}`);
 });
