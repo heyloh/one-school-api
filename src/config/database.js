@@ -1,5 +1,6 @@
 module.exports = {
   dialect: 'postgres',
+  protocol: 'postgres',
   database: process.env.DATABASE_URL,
   define: {
     timestamps: true,
