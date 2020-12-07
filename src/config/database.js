@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+/* Changes for deployment */
+
 module.exports = {
   dialect: 'postgres',
   host: process.env.DATABASE_HOST,
