@@ -1,4 +1,5 @@
 import Student from '../models/Student';
+import Picture from '../models/Picture';
 
 export default {
   async index(request, response) {
@@ -12,6 +13,11 @@ export default {
         'weight',
         'height',
       ],
+      order: [['id', 'DESC'], [Picture, 'id', 'DESC']],
+      include: {
+        model: Picture,
+        attributes: ['id', 'filename'],
+      },
     });
 
     return response.status(200).json(students);
@@ -25,7 +31,23 @@ export default {
           errors: ['Id is missing.'],
         });
       }
-      const student = await Student.findByPk(id);
+
+      const student = await Student.findByPk(id, {
+        attributes: [
+          'id',
+          'name',
+          'surname',
+          'email',
+          'age',
+          'weight',
+          'height',
+        ],
+        order: [['id', 'DESC'], [Picture, 'id', 'DESC']],
+        include: {
+          model: Picture,
+          attributes: ['id', 'filename'],
+        },
+      });
 
       if (!student) {
         return response.status(400).json({
@@ -33,19 +55,7 @@ export default {
         });
       }
 
-      const {
-        name, surname, email, age, weight, height,
-      } = student;
-
-      return response.status(200).json({
-        id,
-        name,
-        surname,
-        email,
-        age,
-        weight,
-        height,
-      });
+      return response.status(200).json(student);
     } catch (err) {
       return response.status(400).json({
         errors: err.errors.map((e) => e.message),
