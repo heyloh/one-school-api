@@ -1,5 +1,5 @@
 # 👩‍🏫 REST API for School application
-> 🚧 Under development 🚧
+> Completed
 
 ## 🛠️ Technologies
 The following tools are being used on the development of this API:
