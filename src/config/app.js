@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
 export default {
-  url: 'http://localhost:3333',
+  url: process.env.url || 'http://localhost:3333',
 };
