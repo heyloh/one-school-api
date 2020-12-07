@@ -24,7 +24,11 @@ The following tools are being used on the development of this API:
 - [x] Profile picture Storage
 - [x] Students List
 
+<!--
+
 ## 🚀 How can I run it?
+
+Good question.
 
 You need to have NodeJS and GIT installed on your device for running this project.
 Also, be sure to have a database running on docker and make the needed alterations on the database config file for making the connection.
@@ -49,3 +53,5 @@ $ yarn dev # or npm run dev
 ```
 
 Now you should be able to work on or just test the API.
+
+-->
