@@ -1,8 +1,8 @@
-# 👩‍🏫 REST API for School application
+# 👩‍🏫 REST API for schoolapp
 >  🚀 Deployed at Heroku
 
 ## 🛠️ Technologies
-The following tools are being used on the development of this API:
+The following tools were used on the development of this API:
 - NodeJS
 - Nodemon
 - Sucrase
@@ -13,8 +13,10 @@ The following tools are being used on the development of this API:
 - bcryptjs
 - JWT (jsonwebtoken)
 - Multer
+- Cors
+- Helmet
 - Eslint
-> See package.json for more details
+> See package.json for more details.
 
 ## ✅ Features
 - [x] User CRUD
